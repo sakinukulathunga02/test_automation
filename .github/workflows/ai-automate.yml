@@ -1,4 +1,4 @@
-name: AI Code Automation (OpenAI)
+name: Copilot Code Automation
 
 on:
   issues:
@@ -26,9 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm install openai @octokit/rest
 
-      - name: Run AI agent
+      - name: Run Copilot agent
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          COPILOT_TOKEN: ${{ secrets.COPILOT_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
